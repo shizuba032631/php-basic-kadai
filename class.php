@@ -25,12 +25,12 @@
          
          class Animal {
             // プロパティ$name,$height,$weightを定義する
-            public $name;
+            public $animal_name;
             public $height;
             public $weight;
             // メソッドを定義する
-            public function show_name() {
-                echo $this->name;
+            public function set_name() {
+                echo $this->animal_name;
            }
            public function show_height() {
                 echo $this->height;
@@ -44,14 +44,21 @@
          $cat = new Animal();
          // プロパティにアクセスし、値を代入する
          $humburg->name = 'ハンバーグ' . '<br>';
-         $humburg->price = '500円'. '<br>';
-         $cat->name = '猫';
-         $cat->height = '25cm';
+         $humburg->price = '500円' . '<br>';
+         $cat->animal_name = '猫' . '<br>';
+         $cat->height = '25cm' . '<br>';
          $cat->weight = '1000g' . '<br>';
 
-         // メソッドを使ってプロパティの値を出力する
-        print_r($humburg->name);
-        print_r($cat->weight);
+         //メソッドを呼び出す
+         $humburg->show_name();
+         $humburg->show_price();
+         $cat->set_name();
+         $cat->show_height();
+         $cat->show_weight();
+         
+
+         print_r($humburg);
+         print_r($cat);
         
         ?>
          
