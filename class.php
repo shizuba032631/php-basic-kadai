@@ -8,61 +8,77 @@
  
  <body>
      <p>
-         <?php
-         // クラスを定義する
-         class Food {
-             // プロパティ$nameを定義する
-             public $name;
-             public $price;
-             // メソッドを定義する
-             public function show_name() {
-                echo $this->name;
-             }
-             public function show_price() {
-                echo $this->price;
-             }
-            }
-         
-         class Animal {
-            // プロパティ$name,$height,$weightを定義する
-            public $animal_name;
-            public $height;
-            public $weight;
-            // メソッドを定義する
-            public function set_name() {
-                echo $this->animal_name;
-           }
-           public function show_height() {
-                echo $this->height;
-           }
-           public function show_weight() {
-                echo $this->weight;
-           }
-        }
-         // インスタンス化する
-         $humburg = new Food();
-         $cat = new Animal();
-         // プロパティにアクセスし、値を代入する
-         $humburg->name = 'ハンバーグ' . '<br>';
-         $humburg->price = '500円' . '<br>';
-         $cat->animal_name = '猫' . '<br>';
-         $cat->height = '25cm' . '<br>';
-         $cat->weight = '1000g' . '<br>';
-
-         //メソッドを呼び出す
-         $humburg->show_name();
-         $humburg->show_price();
-         $cat->set_name();
-         $cat->show_height();
-         $cat->show_weight();
-         
-
-         print_r($humburg);
-         print_r($cat);
+        <?php
+        // クラスを定義する
+        class Food {
+         // プロパティを定義する
+         private $name;
+         private $price;
+         // コンストラクタを定義する
+         public function __construct(string $name, int $price) {
+            $this->name = $name;
+            $this->price = $price;
+          } 
         
-        ?>
-         
-     </p>
+         // メソッドを定義する
+         public function getName() {
+            return $this->name;
+          }
+          public function getPrice() {
+            return $this->price;
+          }
+         }
+         // インスタンス化する
+          $food = new Food('potato', 250);
+          //メソッドにアクセスして実行する
+         $food->getName();
+         $food->getPrice();
+         // インスタンス$foodの各プロパティの値を出力する
+         print_r($food);
+         echo "<br>";
+         // プロパティにアクセスし、値を出力する
+         echo $food->getPrice();
+         echo "<br>";
+      // クラスを定義する
+      class Animal {
+        // プロパティを定義する
+        private $name;
+        private $height;
+        private $weight;
+        // コンストラクタを定義する
+        public function __construct(string $name, int $height, int $weight) {
+           $this->name = $name;
+           $this->height = $height;
+           $this->weight = $weight;
+         } 
+       
+        // メソッドを定義する
+        public function getName() {
+           return $this->name;
+         }
+        public function getHeight() {
+           return $this->height;
+         }
+         public function getWeight() {
+           return $this->weight;
+         }
+        }
+        // インスタンス化する
+         $animal = new Animal('dog', 60, 5000);
+        //メソッドにアクセスして実行する
+        $animal->getName();
+        $animal->getHeight();
+        $animal->getWeight();
+        // インスタンス$animalの各プロパティの値を出力する
+        print_r($animal);
+        echo "<br>";
+        // プロパティにアクセスし、値を出力する
+        echo $animal->getHeight();
+        echo "<br>";
+      ?>
+     
+    </p>
+      
  </body>
  
  </html>
